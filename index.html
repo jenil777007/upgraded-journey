@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display Cookies</title>
+</head>
+<body>
+
+  <h1>Display Cookies</h1>
+  <p>Open your browser's developer tools to view the cookies set by the server.</p>
+
+  <script>
+    // JavaScript code to display cookies
+    const cookies = document.cookie.split('; ');
+
+    if (cookies.length === 0 || cookies[0] === '') {
+      document.write('<p>No cookies found.</p>');
+    } else {
+      document.write('<h2>Cookies:</h2>');
+      document.write('<ul>');
+      cookies.forEach(cookie => {
+        const [name, value] = cookie.split('=');
+        document.write(`<li><strong>${name}</strong>: ${value}</li>`);
+      });
+      document.write('</ul>');
+    }
+  </script>
+
+</body>
+</html>
